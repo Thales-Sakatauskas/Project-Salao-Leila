@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <script src="scripts.js" defer></script>
+    <title>Agendar - Salão da Leila</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("Imagem/DSIN.png");
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html">Home</a>
+        <a href="historico.html">Calendário</a>
+        <a href="gerenciamento.html">Gerenciamento</a>
+        <a href="login.html" id="loginLink">Login</a>
+        <a href="#" id="logoutLink" style="display:none;">Logout</a>
+    </header>
+    <div class="login-container">
+        <h1 class="h1__agenda">Faça seu Agendamento</h1>
+        <form id="agendarForm">
+            <label for="cliente">Nome:</label>
+            <input type="text" id="cliente" readonly><br>
+            <label for="servico">Serviço:</label>
+            <select id="servico">
+                <option value="corte">Corte</option>
+                <option value="pintura">Pintura</option>
+                <option value="manicure">Manicure</option>
+                <option value="manicure e corte ">Manicure e corte </option>
+            </select><br>
+            <label for="data">Data:</label>
+            <input type="date" id="data"><br>
+            <label for="horario">Horário:</label>
+            <input type="time" id="horario"><br>
+            <button type="submit">Agendar</button>
+        </form>
+    </div>
+    <div class="login-container">
+        <h1 class="h1__agenda">Histórico de Agendamentos</h1>
+        <table id="historicoTable">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Serviço</th>
+                    <th>Data</th>
+                    <th>Horário</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Agendamentos serão inseridos aqui -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const clienteLogado = localStorage.getItem('clienteLogado');
+
+            if (!clienteLogado) {
+                alert('Você precisa estar logado para fazer um agendamento.');
+                window.location.href = 'login.html';
+            } else {
+                document.getElementById('cliente').value = clienteLogado;
+            }
+        });
+    </script>
+</body>
+</html>

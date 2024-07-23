@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <script src="scripts.js" defer></script>
+    <title>Gerenciamento - Salão de Beleza da Leila</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("Imagem/DSIN.png");
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .management-container {
+            padding: 30px 50px 30px 30px;
+            border-radius: 9px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-color: white;
+        }
+        .management-container h2 {
+            margin-bottom: 20px;
+        }
+        .management-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .management-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .management-container button {
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .management-container button:hover {
+            background: #555;
+        }
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: #ff69b4;
+        }
+        .agendamentos-list {
+            margin-top: 30px;
+        }
+        .agendamentos-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .agendamentos-list th, .agendamentos-list td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .agendamentos-list th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="agendar.html">Agenda</a>
+        <a href="historico.html">Calendário</a>
+        <a href="login.html" id="loginLink">Login</a>
+        <a href="#" id="logoutLink" style="display:none;">Logout</a>
+    </div>
+
+    <div class="login-container">
+        <h2 class="h1__agenda">Gerenciamento de Agendamentos</h2>
+        <form id="managementForm">
+            <label for="cliente">Nome do Cliente:</label>
+            <input type="text" id="cliente" required>
+            <label for="servico">Serviço:</label>
+            <input type="text" id="servico" required>
+            <label for="data">Data:</label>
+            <input type="date" id="data" required>
+            <label for="horario">Horário:</label>
+            <input type="time" id="horario" required>
+            <button type="submit">Agendar</button>
+        </form>
+
+        <div class="agendamentos-list">
+            <h2>Lista de Agendamentos</h2>
+            <table id="agendamentosTable">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Serviço</th>
+                        <th>Data</th>
+                        <th>Horário</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Agendamentos serão inseridos aqui pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

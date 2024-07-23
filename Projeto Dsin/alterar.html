@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href='https://fullcalendar.io/releases/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+    <script src='https://fullcalendar.io/releases/fullcalendar/3.10.2/lib/jquery.min.js'></script>
+    <script src='https://fullcalendar.io/releases/fullcalendar/3.10.2/lib/moment.min.js'></script>
+    <script src='https://fullcalendar.io/releases/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+    <script src='https://fullcalendar.io/releases/fullcalendar/3.10.2/locale/pt-br.js'></script>
+    <meta charset="UTF-8">
+    <title>Alterar Agendamento</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="agendar.html">Faça seu Agendamento</a></li>
+                <li><a href="historico.html">Calendario</a></li>
+                <li><a href="agenda.html">Meus agendamentos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Alterar Agendamento</h1>
+    <form class="alterar" id="alterarForm">
+        <label for="data">Nova Data:</label>
+        <input type="date" id="data" name="data" required>
+        <br>
+        <label for="horario">Novo Horário:</label>
+        <input type="time" id="horario" name="horario" required>
+        <br>
+        <button type="submit">Salvar Alterações</button>
+    </form>
+</body>
+</html>
